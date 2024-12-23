@@ -1,31 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
- public class Player
+namespace pj09_3
 {
-    // プライベートフィールド
-    private Item item;
-
-    // コンストラクタ
-    public Player(Item item)
+    public class Player
     {
-        this.item = item;
-    }
+        private List<Item> items;
 
-    // メソッド
-    public void UseItem()
-    {
-        if (item != null)
+        public Player()
         {
-            item.Use();
+            items = new List<Item>();
         }
-        else
+
+        public void AddItem(Item item)
         {
-            Console.WriteLine("アイテムを持っていません。");
+            items.Add(item);
+        }
+
+        public void UseItems()
+        {
+            foreach (var item in items)
+            {
+                item.Use();
+            }
         }
     }
 }
-

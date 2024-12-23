@@ -1,20 +1,20 @@
 ﻿using System;
 
-namespace pj09_1
-{ 
+namespace pj09_3
+{
     internal class Program
     {
         static void Main(string[] args)
         {
-            // Playerクラスのインスタンスを生成し、Itemクラスのインスタンスを渡す
-            Player player = new Player(new Item("こん棒"));
+            Player player = new Player();
 
-            // UseItemメソッドを呼び出し
-            player.UseItem();
+            player.AddItem(new Item("つるはし"));
+            player.AddItem(new Item("巻き物"));
+            player.AddItem(new Item("ポーション"));
 
-            // コンソールがすぐ閉じないようにする
+            player.UseItems();
+
             Console.ReadLine();
         }
     }
-
 }
